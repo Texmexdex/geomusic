@@ -26,7 +26,7 @@ An interactive 3D audio synthesizer where you manipulate a geometric shape float
 
 ## 🚀 Live Demo
 
-**[Try it live here!](https://texmexdex.github.io/3d-audio-synth/)**
+**[Try it live here!](https://texmexdex.github.io/geomusic/)**
 
 ## 🛠️ Installation
 
