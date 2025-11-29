@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Audio Synthesizer - Interactive Sound Sculpture</title>
+    <meta name="description" content="An interactive 3D audio synthesizer where you manipulate geometric shapes to create ethereal soundscapes">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 3D Canvas -->
+        <canvas id="canvas"></canvas>
+        
+        <!-- Background particles overlay -->
+        <div class="stars"></div>
+        
+        <!-- UI Overlay -->
+        <div class="ui-overlay">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <h1 class="title">
+                    <span class="glow">3D AUDIO</span> SYNTHESIZER
+                </h1>
+                <div class="info">
+                    <span class="status" id="status">Click to Start</span>
+                </div>
+            </div>
+            
+            <!-- Controls Panel -->
+            <div class="controls-panel">
+                <div class="control-section">
+                    <h3>Shape</h3>
+                    <div class="button-group">
+                        <button class="btn active" data-shape="icosahedron" id="shape-ico">Icosahedron</button>
+                        <button class="btn" data-shape="torus" id="shape-torus">Torus</button>
+                        <button class="btn" data-shape="octahedron" id="shape-oct">Octahedron</button>
+                        <button class="btn" data-shape="dodecahedron" id="shape-dod">Dodecahedron</button>
+                    </div>
+                </div>
+                
+                <div class="control-section">
+                    <h3>Waveform</h3>
+                    <div class="button-group">
+                        <button class="btn active" data-wave="sine" id="wave-sine">Sine</button>
+                        <button class="btn" data-wave="square" id="wave-square">Square</button>
+                        <button class="btn" data-wave="sawtooth" id="wave-saw">Sawtooth</button>
+                        <button class="btn" data-wave="triangle" id="wave-tri">Triangle</button>
+                    </div>
+                </div>
+                
+                <div class="control-section">
+                    <h3>Audio Parameters</h3>
+                    <div class="param-display">
+                        <div class="param">
+                            <span class="label">Frequency</span>
+                            <span class="value" id="freq-display">440 Hz</span>
+                        </div>
+                        <div class="param">
+                            <span class="label">Filter</span>
+                            <span class="value" id="filter-display">1000 Hz</span>
+                        </div>
+                        <div class="param">
+                            <span class="label">Resonance</span>
+                            <span class="value" id="q-display">5.0</span>
+                        </div>
+                        <div class="param">
+                            <span class="label">Reverb</span>
+                            <span class="value" id="reverb-display">30%</span>
+                        </div>
+                        <div class="param">
+                            <span class="label">Delay</span>
+                            <span class="value" id="delay-display">200ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Help Panel -->
+            <div class="help-panel">
+                <h3>Controls</h3>
+                <div class="help-content">
+                    <div class="help-item">
+                        <span class="icon">🖱️</span>
+                        <span>Move mouse → Filter & Resonance</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="icon">🎚️</span>
+                        <span>Scroll wheel → Pitch</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="icon">👆</span>
+                        <span>Drag → Reverb & Delay</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="icon">🖱️</span>
+                        <span>Click → Toggle Sound</span>
+                    </div>
+                    <div class="help-item">
+                        <span class="icon">⌨️</span>
+                        <span>1-4 → Change Shape</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FPS Counter -->
+            <div class="fps-counter" id="fps">60 FPS</div>
+        </div>
+    </div>
+    
+    <!-- Three.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Application Modules -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
